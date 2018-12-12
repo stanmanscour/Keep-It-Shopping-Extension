@@ -1,8 +1,8 @@
 {
-    "name": "TS/R/WP Chrome Extension",
+    "name": "Keep It | Shopping Extension",
     "version": "0.0.1",
     "manifest_version": 2,
-    "description": "Boilerplate for a Chrome extension with TypeScript, React, and Webpack.",
+    "description": "Organisez votre shopping. Sauvegardez et triez tous les vêtements visités de vos sites favoris",
     "homepage_url": "https://duo.com/labs",
     "icons": {
       "16": "icons/icon16.png",
