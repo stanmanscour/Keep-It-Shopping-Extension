@@ -16,14 +16,15 @@ chrome.runtime.sendMessage({}, (response) => {
 class App extends React.Component {
 
     articles = [
-        {name: 'ASOS DESIGN - Socquettes invisibles - Ton chair moyen', price: '4,99 €', source: 'Asos'},
-        {name: 'Sixth June - Pantalon de jogging - Noir', price: '58,99 €', source: 'Asos'}
+        {name: 'ASOS DESIGN - Socquettes invisibles - Ton chair moyen', price: '4,99 €', source: 'Asos', liked: false},
+        {name: 'Sixth June - Pantalon de jogging - Noir', price: '58,99 €', source: 'Asos', liked: true}
     ]
 
     render() {
         return (
             <div className="KPTAPP-container">
                 <ArticlesContainer articles={this.articles}/>
+                
             </div>
         )
     }

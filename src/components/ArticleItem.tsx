@@ -1,4 +1,5 @@
 import * as React from 'react'
+import "../styles/app.css"
 
 interface IArticle {
     name: String,
@@ -17,7 +18,7 @@ class ArticleItem extends React.Component<IProps, any> {
     constructor(props){
         super(props);
         this.state = {
-            liked: false
+            liked: this.props.article.liked
         };
 
         this.handleLike = this.handleLike.bind(this);
@@ -30,16 +31,12 @@ class ArticleItem extends React.Component<IProps, any> {
     }
 
     render() {
-        let likeButton;
-
-        if (this.state.liked){
-            likeButton = <button onClick={this.handleLike}>Article aimé</button>;
-        } else {
-            likeButton = <button onClick={this.handleLike}>Aimer cet article</button>;
-        }
+        let likeButton = <button onClick={this.handleLike}>{ 
+            this.state.liked ? 'Article aimé' : 'Aimer cet article' }
+            </button>;
 
         return(
-            <div>
+            <div className="KPTAPP-articles-container__item">
                 <p>{this.props.article.name} - {this.props.article.price}</p>
                 { likeButton }
             </div>
