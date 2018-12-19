@@ -1,0 +1,55 @@
+.KPTAPP-container {
+  /* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+  /* HTML5 display-role reset for older browsers */
+  width: 390px;
+  border: 1px solid black;
+}
+
+.KPTAPP-container html, .KPTAPP-container body, .KPTAPP-container div, .KPTAPP-container span, .KPTAPP-container applet, .KPTAPP-container object, .KPTAPP-container iframe, .KPTAPP-container h1, .KPTAPP-container h2, .KPTAPP-container h3, .KPTAPP-container h4, .KPTAPP-container h5, .KPTAPP-container h6, .KPTAPP-container p, .KPTAPP-container blockquote, .KPTAPP-container pre, .KPTAPP-container a, .KPTAPP-container abbr, .KPTAPP-container acronym, .KPTAPP-container address, .KPTAPP-container big, .KPTAPP-container cite, .KPTAPP-container code, .KPTAPP-container del, .KPTAPP-container dfn, .KPTAPP-container em, .KPTAPP-container img, .KPTAPP-container ins, .KPTAPP-container kbd, .KPTAPP-container q, .KPTAPP-container s, .KPTAPP-container samp, .KPTAPP-container small, .KPTAPP-container strike, .KPTAPP-container strong, .KPTAPP-container sub, .KPTAPP-container sup, .KPTAPP-container tt, .KPTAPP-container var, .KPTAPP-container b, .KPTAPP-container u, .KPTAPP-container i, .KPTAPP-container center, .KPTAPP-container dl, .KPTAPP-container dt, .KPTAPP-container dd, .KPTAPP-container ol, .KPTAPP-container ul, .KPTAPP-container li, .KPTAPP-container fieldset, .KPTAPP-container form, .KPTAPP-container label, .KPTAPP-container legend, .KPTAPP-container table, .KPTAPP-container caption, .KPTAPP-container tbody, .KPTAPP-container tfoot, .KPTAPP-container thead, .KPTAPP-container tr, .KPTAPP-container th, .KPTAPP-container td, .KPTAPP-container article, .KPTAPP-container aside, .KPTAPP-container canvas, .KPTAPP-container details, .KPTAPP-container embed, .KPTAPP-container figure, .KPTAPP-container figcaption, .KPTAPP-container footer, .KPTAPP-container header, .KPTAPP-container hgroup, .KPTAPP-container menu, .KPTAPP-container nav, .KPTAPP-container output, .KPTAPP-container ruby, .KPTAPP-container section, .KPTAPP-container summary, .KPTAPP-container time, .KPTAPP-container mark, .KPTAPP-container audio, .KPTAPP-container video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+.KPTAPP-container article, .KPTAPP-container aside, .KPTAPP-container details, .KPTAPP-container figcaption, .KPTAPP-container figure, .KPTAPP-container footer, .KPTAPP-container header, .KPTAPP-container hgroup, .KPTAPP-container menu, .KPTAPP-container nav, .KPTAPP-container section {
+  display: block;
+}
+
+.KPTAPP-container body {
+  line-height: 1;
+}
+
+.KPTAPP-container ol, .KPTAPP-container ul {
+  list-style: none;
+}
+
+.KPTAPP-container blockquote, .KPTAPP-container q {
+  quotes: none;
+}
+
+.KPTAPP-container blockquote:before, .KPTAPP-container blockquote:after {
+  content: '';
+  content: none;
+}
+
+.KPTAPP-container q:before, .KPTAPP-container q:after {
+  content: '';
+  content: none;
+}
+
+.KPTAPP-container table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.KPTAPP-container .KPTAPP-articles-container__item {
+  height: 60px;
+  border-top: 1px solid black;
+}
+/*# sourceMappingURL=app.css.map */

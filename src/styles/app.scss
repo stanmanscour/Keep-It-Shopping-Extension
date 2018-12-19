@@ -1,0 +1,17 @@
+
+
+.KPTAPP-container {
+    @import 'reset';
+    width: 390px;
+    border: 1px solid black;
+
+    .KPTAPP {
+        &-articles-container {
+           
+            &__item {
+                height: 60px; 
+                border-top: 1px solid black;    
+            }
+        }
+    }
+} 
