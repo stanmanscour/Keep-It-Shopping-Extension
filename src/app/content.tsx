@@ -2,24 +2,61 @@ import * as React from "react"
 import * as ReactDOM from "react-dom"
 import { createStore } from 'redux'
 import ArticlesContainer from '../components/ArticlesContainer'
+import Header from '../components/Header'
 import { Provider } from 'react-redux'
 
 const initialState = {
     articles: [
         {
-            name: 'ASOS DESIGN - Socquettes invisibles - Ton chair moyen', 
+            name: 'asos DESIGN - Socquettes invisibles - Ton chair moyen', 
             price: '5,45 €', 
-            source: 'Asos', 
+            source: 'mango', 
             liked: false
         },
         {
             name: 'Sixth June - Pantalon de jogging - Noir', 
             price: '58,99 €', 
-            source: 'Asos', 
+            source: 'asos', 
+            liked: true
+        },
+        {
+            name: 'asos DESIGN - Socquettes invisibles - Ton chair moyen', 
+            price: '5,45 €', 
+            source: 'zara', 
+            liked: false
+        },
+        {
+            name: 'Sixth June - Pantalon de jogging - Noir', 
+            price: '58,99 €', 
+            source: 'asos', 
+            liked: true
+        },
+        {
+            name: 'asos DESIGN - Socquettes invisibles - Ton chair moyen', 
+            price: '5,45 €', 
+            source: 'zara', 
+            liked: false
+        },
+        {
+            name: 'Sixth June - Pantalon de jogging - Noir', 
+            price: '58,99 €', 
+            source: 'mango', 
+            liked: true
+        },
+        {
+            name: 'asos DESIGN - Socquettes invisibles - Ton chair moyen', 
+            price: '5,45 €', 
+            source: 'zara', 
+            liked: false
+        },
+        {
+            name: 'Sixth June - Pantalon de jogging - Noir', 
+            price: '58,99 €', 
+            source: 'asos', 
             liked: true
         }
     ],
-    filterText: 'liked'
+    filterText: 'all'
 }
 
 function reducer(state = initialState, action){
@@ -57,6 +94,7 @@ class App extends React.Component {
         return (
             <Provider store={store}>
                 <div className="KPTAPP-container">
+                    <Header />
                     <ArticlesContainer/>
                 </div>
             </Provider>

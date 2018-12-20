@@ -34,10 +34,12 @@ class ArticlesContainer extends React.Component<IProps> {
 
     render() {
         return(
-            <div className="KPTAPP-articles-container">
-                {this.filteredArticles(this.props.filter).map((item, key) => {
-                    return <ArticleItem toggleLike={() => {this.toggleLike(key)}} key={key} article={item} />
-                })}
+            <div className="KPTAPP-body">
+                <div className="KPTAPP-articles-list">
+                    {this.filteredArticles(this.props.filter).map((item, key) => {
+                        return <ArticleItem toggleLike={() => {this.toggleLike(key)}} key={key} article={item} />
+                    })}
+                </div>
                 <NavigationArticles />
             </div>
         )

@@ -1,28 +1,30 @@
 @import 'variables';
 
 .KPTAPP {
-    @import 'navigationArticles';
-} 
-
-.KPTAPP {
+    @import 'reset';
+    * {
+        box-sizing: border-box;
+    }
     position: fixed;
     top: 0px;
+    right: 0px;
+    width: 390px;
     z-index: 99999999999999;
-    background-color: white;
+    
 }
 
-.KPTAPP-container {
-    @import 'reset';
-    width: 390px;
-    border: 1px solid black;
-
-    .KPTAPP {
-        &-articles-container {
-           
-            &__item {
-                height: 60px; 
-                border-top: 1px solid black;    
-            }
-        }
+.KPTAPP .KPTAPP {
+    &-container {
+        position: relative; 
+        height: 100vh;
+        background-color: white;
+        
+        //border: 1px solid black;
     }
+
+    @import 'header';
+    @import 'body';
+    @import 'articlesList';
+    @import 'articleItem';
+    @import 'navigationArticles';
 } 

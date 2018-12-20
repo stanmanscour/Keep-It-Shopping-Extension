@@ -5,6 +5,11 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
 
     button {
         background-color: transparent;
