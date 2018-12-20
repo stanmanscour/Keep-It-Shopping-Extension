@@ -9,7 +9,8 @@ interface IArticle {
 }
 
 interface IProps {
-    article: IArticle
+    article: IArticle,
+    toggleLike: () => void;
 }
 
 
@@ -17,22 +18,11 @@ class ArticleItem extends React.Component<IProps, any> {
 
     constructor(props){
         super(props);
-        this.state = {
-            liked: this.props.article.liked
-        };
-
-        this.handleLike = this.handleLike.bind(this);
-    }
-
-    handleLike(){
-        this.setState(state => ({
-            liked: !state.liked
-        }))
     }
 
     render() {
-        let likeButton = <button onClick={this.handleLike}>{ 
-            this.state.liked ? 'Article aimé' : 'Aimer cet article' }
+        let likeButton = <button onClick={ this.props.toggleLike }>{ 
+            this.props.article.liked ? 'Article aimé' : 'Aimer cet article' }
             </button>;
 
         return(

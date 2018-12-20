@@ -1,4 +1,15 @@
+@import 'variables';
 
+.KPTAPP {
+    @import 'navigationArticles';
+} 
+
+.KPTAPP {
+    position: fixed;
+    top: 0px;
+    z-index: 99999999999999;
+    background-color: white;
+}
 
 .KPTAPP-container {
     @import 'reset';

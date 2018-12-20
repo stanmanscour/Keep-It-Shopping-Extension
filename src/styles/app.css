@@ -1,3 +1,40 @@
+.KPTAPP-navigation-articles {
+  background-color: #2B2B2B;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.KPTAPP-navigation-articles button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  height: 25px;
+  font-weight: bold;
+  opacity: 0.5;
+}
+
+.KPTAPP-navigation-articles button.active, .KPTAPP-navigation-articles button:hover {
+  opacity: 1;
+}
+
+.KPTAPP {
+  position: fixed;
+  top: 0px;
+  z-index: 99999999999999;
+  background-color: white;
+}
+
 .KPTAPP-container {
   /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
