@@ -1,0 +1,27 @@
+&-navigation-articles {
+    background-color: $defaultBlack;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+
+    button {
+        background-color: transparent;
+        border: none;
+        color: white;
+        height: 25px;
+        font-weight: bold;
+        opacity: 0.5;
+
+        &.active,
+        &:hover {
+            opacity: 1;
+        }
+    }
+}

@@ -1,0 +1,93 @@
+&-article-item {
+    border-bottom: 1px solid #E9E7E7;
+    height: 115px;
+    min-height: 115px;
+    background-color: white;
+    padding: 9px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+
+    .KPTAPP-article-source  {
+        height: 100%;
+        width: 3px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        bottom: 0px;
+
+        &.asos {
+            background-color: #4142F8; 
+        }
+
+        &.zara {
+            background-color: black;
+        }
+
+        &.mango {
+            background-color: #FF743F;
+        }
+    }
+    
+    &__picture {
+        margin-left: 5px;
+        max-width: 60px;
+        min-width: 60px;
+        height: 96px;
+        background-color: lightGrey;
+    }
+
+    &__body {
+        margin-left: 14px;
+        display: flex;
+        flex-direction: column;
+
+        p {
+            font-weight: bold;
+            line-height: 17px;
+            color: $textBlack;
+        }
+
+        span {
+            font-weight: bold;
+            margin-top: 3px;
+            color: $defaultRed;
+        }
+
+        button {
+            margin-top: auto;
+            display: inline-block;
+        }
+    }
+
+    &:hover {
+        .KPTAPP-article-item__close {
+            opacity: 1;
+        }
+    }
+
+    &__close {
+        position: absolute;
+        top: 9px;
+        right: 9px;
+        opacity: 0;
+    }
+
+    &__like {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: none;
+        background-color: transparent;
+        border: 1px solid lightGrey;
+
+        &--active {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: none;
+            background-color: $defaultRed;
+            border: none;
+        }
+    }
+}

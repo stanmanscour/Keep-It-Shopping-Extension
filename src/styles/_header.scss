@@ -1,0 +1,14 @@
+&-header {
+    display: flex;
+    flex-direction: row;
+    background-color: $defaultBlack;
+    height: 60px;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+}

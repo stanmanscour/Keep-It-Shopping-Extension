@@ -1,14 +1,17 @@
-.KPTAPP-container {
+.KPTAPP {
   /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
   /* HTML5 display-role reset for older browsers */
+  position: fixed;
+  top: 0px;
+  right: 0px;
   width: 390px;
-  border: 1px solid black;
+  z-index: 99999999999999;
 }
 
-.KPTAPP-container html, .KPTAPP-container body, .KPTAPP-container div, .KPTAPP-container span, .KPTAPP-container applet, .KPTAPP-container object, .KPTAPP-container iframe, .KPTAPP-container h1, .KPTAPP-container h2, .KPTAPP-container h3, .KPTAPP-container h4, .KPTAPP-container h5, .KPTAPP-container h6, .KPTAPP-container p, .KPTAPP-container blockquote, .KPTAPP-container pre, .KPTAPP-container a, .KPTAPP-container abbr, .KPTAPP-container acronym, .KPTAPP-container address, .KPTAPP-container big, .KPTAPP-container cite, .KPTAPP-container code, .KPTAPP-container del, .KPTAPP-container dfn, .KPTAPP-container em, .KPTAPP-container img, .KPTAPP-container ins, .KPTAPP-container kbd, .KPTAPP-container q, .KPTAPP-container s, .KPTAPP-container samp, .KPTAPP-container small, .KPTAPP-container strike, .KPTAPP-container strong, .KPTAPP-container sub, .KPTAPP-container sup, .KPTAPP-container tt, .KPTAPP-container var, .KPTAPP-container b, .KPTAPP-container u, .KPTAPP-container i, .KPTAPP-container center, .KPTAPP-container dl, .KPTAPP-container dt, .KPTAPP-container dd, .KPTAPP-container ol, .KPTAPP-container ul, .KPTAPP-container li, .KPTAPP-container fieldset, .KPTAPP-container form, .KPTAPP-container label, .KPTAPP-container legend, .KPTAPP-container table, .KPTAPP-container caption, .KPTAPP-container tbody, .KPTAPP-container tfoot, .KPTAPP-container thead, .KPTAPP-container tr, .KPTAPP-container th, .KPTAPP-container td, .KPTAPP-container article, .KPTAPP-container aside, .KPTAPP-container canvas, .KPTAPP-container details, .KPTAPP-container embed, .KPTAPP-container figure, .KPTAPP-container figcaption, .KPTAPP-container footer, .KPTAPP-container header, .KPTAPP-container hgroup, .KPTAPP-container menu, .KPTAPP-container nav, .KPTAPP-container output, .KPTAPP-container ruby, .KPTAPP-container section, .KPTAPP-container summary, .KPTAPP-container time, .KPTAPP-container mark, .KPTAPP-container audio, .KPTAPP-container video {
+.KPTAPP html, .KPTAPP body, .KPTAPP div, .KPTAPP span, .KPTAPP applet, .KPTAPP object, .KPTAPP iframe, .KPTAPP h1, .KPTAPP h2, .KPTAPP h3, .KPTAPP h4, .KPTAPP h5, .KPTAPP h6, .KPTAPP p, .KPTAPP blockquote, .KPTAPP pre, .KPTAPP a, .KPTAPP abbr, .KPTAPP acronym, .KPTAPP address, .KPTAPP big, .KPTAPP cite, .KPTAPP code, .KPTAPP del, .KPTAPP dfn, .KPTAPP em, .KPTAPP img, .KPTAPP ins, .KPTAPP kbd, .KPTAPP q, .KPTAPP s, .KPTAPP samp, .KPTAPP small, .KPTAPP strike, .KPTAPP strong, .KPTAPP sub, .KPTAPP sup, .KPTAPP tt, .KPTAPP var, .KPTAPP b, .KPTAPP u, .KPTAPP i, .KPTAPP center, .KPTAPP dl, .KPTAPP dt, .KPTAPP dd, .KPTAPP ol, .KPTAPP ul, .KPTAPP li, .KPTAPP fieldset, .KPTAPP form, .KPTAPP label, .KPTAPP legend, .KPTAPP table, .KPTAPP caption, .KPTAPP tbody, .KPTAPP tfoot, .KPTAPP thead, .KPTAPP tr, .KPTAPP th, .KPTAPP td, .KPTAPP article, .KPTAPP aside, .KPTAPP canvas, .KPTAPP details, .KPTAPP embed, .KPTAPP figure, .KPTAPP figcaption, .KPTAPP footer, .KPTAPP header, .KPTAPP hgroup, .KPTAPP menu, .KPTAPP nav, .KPTAPP output, .KPTAPP ruby, .KPTAPP section, .KPTAPP summary, .KPTAPP time, .KPTAPP mark, .KPTAPP audio, .KPTAPP video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -17,39 +20,230 @@
   vertical-align: baseline;
 }
 
-.KPTAPP-container article, .KPTAPP-container aside, .KPTAPP-container details, .KPTAPP-container figcaption, .KPTAPP-container figure, .KPTAPP-container footer, .KPTAPP-container header, .KPTAPP-container hgroup, .KPTAPP-container menu, .KPTAPP-container nav, .KPTAPP-container section {
+.KPTAPP article, .KPTAPP aside, .KPTAPP details, .KPTAPP figcaption, .KPTAPP figure, .KPTAPP footer, .KPTAPP header, .KPTAPP hgroup, .KPTAPP menu, .KPTAPP nav, .KPTAPP section {
   display: block;
 }
 
-.KPTAPP-container body {
+.KPTAPP body {
   line-height: 1;
 }
 
-.KPTAPP-container ol, .KPTAPP-container ul {
+.KPTAPP ol, .KPTAPP ul {
   list-style: none;
 }
 
-.KPTAPP-container blockquote, .KPTAPP-container q {
+.KPTAPP blockquote, .KPTAPP q {
   quotes: none;
 }
 
-.KPTAPP-container blockquote:before, .KPTAPP-container blockquote:after {
+.KPTAPP blockquote:before, .KPTAPP blockquote:after {
   content: '';
   content: none;
 }
 
-.KPTAPP-container q:before, .KPTAPP-container q:after {
+.KPTAPP q:before, .KPTAPP q:after {
   content: '';
   content: none;
 }
 
-.KPTAPP-container table {
+.KPTAPP table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-.KPTAPP-container .KPTAPP-articles-container__item {
+.KPTAPP * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.KPTAPP .KPTAPP-container {
+  position: relative;
+  height: 100vh;
+  background-color: white;
+}
+
+.KPTAPP .KPTAPP-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: #2B2B2B;
   height: 60px;
-  border-top: 1px solid black;
+  color: white;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+}
+
+.KPTAPP .KPTAPP-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.KPTAPP .KPTAPP-articles-list {
+  background-color: #F1F1F1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: calc(100vh - 120px);
+  overflow-y: scroll;
+  margin-top: 60px;
+}
+
+.KPTAPP .KPTAPP-article-item {
+  border-bottom: 1px solid #E9E7E7;
+  height: 115px;
+  min-height: 115px;
+  background-color: white;
+  padding: 9px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+}
+
+.KPTAPP .KPTAPP-article-item .KPTAPP-article-source {
+  height: 100%;
+  width: 3px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+}
+
+.KPTAPP .KPTAPP-article-item .KPTAPP-article-source.asos {
+  background-color: #4142F8;
+}
+
+.KPTAPP .KPTAPP-article-item .KPTAPP-article-source.zara {
+  background-color: black;
+}
+
+.KPTAPP .KPTAPP-article-item .KPTAPP-article-source.mango {
+  background-color: #FF743F;
+}
+
+.KPTAPP .KPTAPP-article-item__picture {
+  margin-left: 5px;
+  max-width: 60px;
+  min-width: 60px;
+  height: 96px;
+  background-color: lightGrey;
+}
+
+.KPTAPP .KPTAPP-article-item__body {
+  margin-left: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.KPTAPP .KPTAPP-article-item__body p {
+  font-weight: bold;
+  line-height: 17px;
+  color: #333333;
+}
+
+.KPTAPP .KPTAPP-article-item__body span {
+  font-weight: bold;
+  margin-top: 3px;
+  color: #D01345;
+}
+
+.KPTAPP .KPTAPP-article-item__body button {
+  margin-top: auto;
+  display: inline-block;
+}
+
+.KPTAPP .KPTAPP-article-item:hover .KPTAPP-article-item__close {
+  opacity: 1;
+}
+
+.KPTAPP .KPTAPP-article-item__close {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  opacity: 0;
+}
+
+.KPTAPP .KPTAPP-article-item__like {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: transparent;
+  border: 1px solid lightGrey;
+}
+
+.KPTAPP .KPTAPP-article-item__like--active {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: #D01345;
+  border: none;
+}
+
+.KPTAPP .KPTAPP-navigation-articles {
+  background-color: #2B2B2B;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+}
+
+.KPTAPP .KPTAPP-navigation-articles button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  height: 25px;
+  font-weight: bold;
+  opacity: 0.5;
+}
+
+.KPTAPP .KPTAPP-navigation-articles button.active, .KPTAPP .KPTAPP-navigation-articles button:hover {
+  opacity: 1;
 }
 /*# sourceMappingURL=app.css.map */
