@@ -63,6 +63,7 @@ function reducer(state = initialState, action){
     switch(action.type){
         case 'TOGGLE_ARTICLE_LIKE':
             state.articles = [...state.articles];
+            state.articles[action.id] = { ...state.articles[action.id]};
             state.articles[action.id].liked = !state.articles[action.id].liked;
             return { ...state };
         case 'FILTER_ARTICLE':
@@ -75,7 +76,9 @@ function reducer(state = initialState, action){
 
 
 
-const store = createStore(reducer);
+const store = createStore(
+    reducer
+);
 
 chrome.runtime.sendMessage({}, (response) => {
     var checkReady = setInterval(() => {

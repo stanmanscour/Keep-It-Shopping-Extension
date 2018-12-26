@@ -126,27 +126,6 @@
   position: relative;
 }
 
-.KPTAPP .KPTAPP-article-item .KPTAPP-article-source {
-  height: 100%;
-  width: 3px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  bottom: 0px;
-}
-
-.KPTAPP .KPTAPP-article-item .KPTAPP-article-source.asos {
-  background-color: #4142F8;
-}
-
-.KPTAPP .KPTAPP-article-item .KPTAPP-article-source.zara {
-  background-color: black;
-}
-
-.KPTAPP .KPTAPP-article-item .KPTAPP-article-source.mango {
-  background-color: #FF743F;
-}
-
 .KPTAPP .KPTAPP-article-item__picture {
   margin-left: 5px;
   max-width: 60px;
@@ -167,20 +146,42 @@
 }
 
 .KPTAPP .KPTAPP-article-item__body p {
+  font-size: 14px;
   font-weight: bold;
   line-height: 17px;
   color: #333333;
 }
 
-.KPTAPP .KPTAPP-article-item__body span {
-  font-weight: bold;
-  margin-top: 3px;
+.KPTAPP .KPTAPP-article-item__body__price {
   color: #D01345;
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 5px;
+  display: inline-block;
 }
 
 .KPTAPP .KPTAPP-article-item__body button {
   margin-top: auto;
   display: inline-block;
+}
+
+.KPTAPP .KPTAPP-article-item__body__action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: auto;
+}
+
+.KPTAPP .KPTAPP-article-item__body__action span {
+  color: black;
+  font-size: 14px;
 }
 
 .KPTAPP .KPTAPP-article-item:hover .KPTAPP-article-item__close {

@@ -6,21 +6,14 @@ import { connect } from 'react-redux'
 interface IProps {
     articles: Array<any>,
     filter: String,
-    dispatch: (any) => void
+    dispatch: (any) => void,
+    toggleArticleLike: (number) => void
 }
 
 class ArticlesContainer extends React.Component<IProps> {
 
-    constructor(props){
-        super(props)
-        this.toggleLike = this.toggleLike.bind(this);
-        this.filteredArticles = this.filteredArticles.bind(this);
-    }
-
     toggleLike = (id) => {
-        this.props.dispatch({type: 'TOGGLE_ARTICLE_LIKE', id});
-        //this.props.dispatch({type: 'FILTER_ARTICLE', text: 'liked'});
-        //console.log(this.props.articles[id].liked);
+        this.props.toggleArticleLike(id);
     }
 
     filteredArticles = (filter) => {
@@ -37,7 +30,7 @@ class ArticlesContainer extends React.Component<IProps> {
             <div className="KPTAPP-body">
                 <div className="KPTAPP-articles-list">
                     {this.filteredArticles(this.props.filter).map((item, key) => {
-                        return <ArticleItem toggleLike={() => {this.toggleLike(key)}} key={key} article={item} />
+                        return <ArticleItem toggleLike={this.toggleLike}  id={key} key={key} article={item} />
                     })}
                 </div>
                 <NavigationArticles />
@@ -51,4 +44,8 @@ const mapStateToProps = state => ({
     filter: state.filterText
 })
 
-export default connect(mapStateToProps)(ArticlesContainer);
+const mapDispatchToProps = dispatch => ({
+    toggleArticleLike: id => dispatch({type: 'TOGGLE_ARTICLE_LIKE', id})
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(ArticlesContainer);
