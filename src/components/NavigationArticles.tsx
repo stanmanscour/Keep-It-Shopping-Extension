@@ -23,7 +23,7 @@ class NavigationArticles extends React.Component<any> {
 }
 
 const mapStateToProps = state => ({
-    filter: state.filterText
+    filter: state.articles.filterText
 })
 
 export default connect(mapStateToProps)(NavigationArticles)

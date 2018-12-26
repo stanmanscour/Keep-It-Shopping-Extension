@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 
 interface IProps {
     articles: Array<any>,
-    filter: String,
+    filter: string,
     dispatch: (any) => void,
     toggleArticleLike: (number) => void
 }
@@ -33,15 +33,15 @@ class ArticlesContainer extends React.Component<IProps> {
                         return <ArticleItem toggleLike={this.toggleLike}  id={key} key={key} article={item} />
                     })}
                 </div>
-                <NavigationArticles />
+                <NavigationArticles  /> 
             </div>
         )
     }
 }
 
 const mapStateToProps = state => ({
-    articles: state.articles,
-    filter: state.filterText
+    articles: state.articles.articles,
+    filter: state.articles.filterText
 })
 
 const mapDispatchToProps = dispatch => ({

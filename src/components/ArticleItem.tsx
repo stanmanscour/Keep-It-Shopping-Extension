@@ -23,7 +23,6 @@ class ArticleItem extends React.PureComponent<IProps, any> {
     }
 
     render() {
-        console.log('render');
 
         let likeButton = <button 
             onClick={ this.handleButton }
