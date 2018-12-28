@@ -1,34 +1,42 @@
 import * as React from 'react'
 import ArticleItem from './ArticleItem'
-import NavigationArticles from './NavigationArticles'
 import { connect } from 'react-redux'
 
 interface IProps {
     articles: Array<any>,
-    filter: String,
-    dispatch: (any) => void
+    filter: string,
+    filterValue: string,
+    dispatch: (any) => void,
+    toggleArticleLike: (number) => void
 }
 
 class ArticlesContainer extends React.Component<IProps> {
 
-    constructor(props){
-        super(props)
-        this.toggleLike = this.toggleLike.bind(this);
-        this.filteredArticles = this.filteredArticles.bind(this);
+    toggleLike = (id) => {
+        this.props.toggleArticleLike(id);
     }
 
-    toggleLike = (id) => {
-        this.props.dispatch({type: 'TOGGLE_ARTICLE_LIKE', id});
-        //this.props.dispatch({type: 'FILTER_ARTICLE', text: 'liked'});
-        //console.log(this.props.articles[id].liked);
+    filterByInput = () => {
+        return this.props.articles.filter(article => {
+            let articleName = article.name.toLowerCase();
+            let articleSource = article.source.toLowerCase();
+            let filter = this.props.filterValue.toLowerCase();
+
+            if (articleName.indexOf(filter) !== -1 || articleSource.indexOf(filter) !== -1){
+                return article
+            } 
+           // return article.name.toLowerCase().indexOf(this.props.filterValue.toLowerCase()) !== -1
+        })
     }
 
     filteredArticles = (filter) => {
         switch (filter){
             case 'all': 
-                return this.props.articles;
+                return this.filterByInput();
+                //return this.props.articles.filter(article => article.name.indexOf(this.props.filterValue) !== -1);
             case 'liked': 
-                return this.props.articles.filter((article) => article.liked === true)
+                return this.filterByInput().filter(article => article.liked === true);
+                //return this.props.articles.filter((article) => article.liked === true)
         }
     }
 
@@ -37,18 +45,22 @@ class ArticlesContainer extends React.Component<IProps> {
             <div className="KPTAPP-body">
                 <div className="KPTAPP-articles-list">
                     {this.filteredArticles(this.props.filter).map((item, key) => {
-                        return <ArticleItem toggleLike={() => {this.toggleLike(key)}} key={key} article={item} />
+                        return <ArticleItem toggleLike={this.toggleLike}  id={key} key={key} article={item} />
                     })}
                 </div>
-                <NavigationArticles />
             </div>
         )
     }
 }
 
 const mapStateToProps = state => ({
-    articles: state.articles,
-    filter: state.filterText
+    articles: state.articles.list,
+    filter: state.articles.filterText,
+    filterValue: state.articles.filterValue
 })
 
-export default connect(mapStateToProps)(ArticlesContainer);
+const mapDispatchToProps = dispatch => ({
+    toggleArticleLike: id => dispatch({type: 'TOGGLE_ARTICLE_LIKE', id})
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(ArticlesContainer);

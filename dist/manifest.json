@@ -3,7 +3,13 @@
     "version": "0.0.1",
     "manifest_version": 2,
     "description": "Organisez votre shopping. Sauvegardez et triez tous les vêtements visités de vos sites favoris",
-    "homepage_url": "https://duo.com/labs",
+    "web_accessible_resources": [
+      "icons/eye-white.svg",
+      "icons/cross.svg",
+      "icons/love-red.svg",
+      "icons/love-grey.svg",
+      "icons/loupe-grey.svg"
+    ],
     "icons": {
       "16": "icons/icon16.png",
       "48": "icons/icon48.png",

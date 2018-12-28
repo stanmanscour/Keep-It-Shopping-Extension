@@ -4,38 +4,44 @@ import "../styles/app.css"
 interface IArticle {
     name: string,
     source: string,
-    price: String,
-    liked: Boolean
+    price: string,
+    liked: boolean,
+    id: number
 }
 
 interface IProps {
     article: IArticle,
-    toggleLike: () => void;
+    id: number,
+    toggleLike: (id) => void;
 }
 
 
-class ArticleItem extends React.Component<IProps, any> {
+class ArticleItem extends React.PureComponent<IProps, any> {
 
-    constructor(props){
-        super(props);
+    handleButton = () => {
+        this.props.toggleLike(this.props.id);
     }
 
     render() {
+
         let likeButton = <button 
-            onClick={ this.props.toggleLike }
+            onClick={ this.handleButton }
             className={this.props.article.liked ? 'KPTAPP-article-item__like--active' : 'KPTAPP-article-item__like' }>
             </button>;
 
+
         return(
             <div className="KPTAPP-article-item">
-                <div className={ `KPTAPP-article-source ${this.props.article.source} `}></div>
                 <div className="KPTAPP-article-item__picture">
                     <img src={this.props.article.name}></img>
                 </div>
                 <div className="KPTAPP-article-item__body">
                     <p>{this.props.article.name}</p>
-                    <span>{this.props.article.price}</span>
-                    { likeButton }
+                    <span className="KPTAPP-article-item__body__price">{this.props.article.price}</span>
+                    <div className="KPTAPP-article-item__body__action">
+                        { likeButton }
+                        <span>{ this.props.article.source}</span>
+                    </div>
                 </div>
                <a className="KPTAPP-article-item__close">x</a>
             </div>

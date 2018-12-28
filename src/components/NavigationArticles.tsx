@@ -15,15 +15,17 @@ class NavigationArticles extends React.Component<any> {
     render(){
         return(
             <div className="KPTAPP-navigation-articles">
-                <button className={this.props.filter === 'all' ? 'active' : ''} onClick={() => this.filterArticles('all')}>Viewed</button>
-                <button className={this.props.filter === 'liked' ? 'active' : ''} onClick={() => this.filterArticles('liked')}>Liked</button>
+                <button className={this.props.filter === 'all' ? 'active' : ''} onClick={() => this.filterArticles('all')}>v ({this.props.articlesLength})</button>
+                <button className={this.props.filter === 'liked' ? 'active' : ''} onClick={() => this.filterArticles('liked')}>l ({this.props.articlesLikedLength})</button>
             </div>
         )
     }
 }
 
 const mapStateToProps = state => ({
-    filter: state.filterText
+    filter: state.articles.filterText,
+    articlesLength: state.articles.list.length,
+    articlesLikedLength: state.articles.list.filter((article) => article.liked === true).length
 })
 
 export default connect(mapStateToProps)(NavigationArticles)
