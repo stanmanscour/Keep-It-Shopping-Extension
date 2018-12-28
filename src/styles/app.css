@@ -60,6 +60,8 @@
   position: relative;
   height: 100vh;
   background-color: white;
+  -webkit-box-shadow: -1px 1px 1px #97979740;
+          box-shadow: -1px 1px 1px #97979740;
 }
 
 .KPTAPP .KPTAPP-header {
@@ -71,19 +73,37 @@
       -ms-flex-direction: row;
           flex-direction: row;
   background-color: #2B2B2B;
-  height: 60px;
+  height: 54px;
   color: white;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   position: absolute;
   width: 100%;
   left: 0px;
   top: 0px;
   right: 0px;
+}
+
+.KPTAPP .KPTAPP-headerSearch {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.KPTAPP .KPTAPP-headerSearch input {
+  height: 30px;
+  border: none;
+  background-color: transparent;
+  padding-left: 12px;
+  font-size: 13px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: white;
 }
 
 .KPTAPP .KPTAPP-body {
@@ -105,9 +125,9 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: calc(100vh - 120px);
+  height: calc(100vh - 54px);
   overflow-y: scroll;
-  margin-top: 60px;
+  margin-top: 54px;
 }
 
 .KPTAPP .KPTAPP-article-item {
@@ -215,7 +235,7 @@
 
 .KPTAPP .KPTAPP-navigation-articles {
   background-color: #2B2B2B;
-  height: 60px;
+  height: 54px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -223,28 +243,23 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: absolute;
-  width: 100%;
-  left: 0px;
-  bottom: 0px;
-  right: 0px;
 }
 
 .KPTAPP .KPTAPP-navigation-articles button {
   background-color: transparent;
   border: none;
   color: white;
-  height: 25px;
   font-weight: bold;
-  opacity: 0.5;
+  width: 75px;
+  height: 100%;
+  padding: 0;
+  outline: none;
+  opacity: 0.7;
 }
 
 .KPTAPP .KPTAPP-navigation-articles button.active, .KPTAPP .KPTAPP-navigation-articles button:hover {
   opacity: 1;
+  background-color: black;
+  outline: none;
 }
 /*# sourceMappingURL=app.css.map */

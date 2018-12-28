@@ -1,5 +1,5 @@
 const initialState = {
-    articles: [
+    list: [
         {
             name: 'asos DESIGN - Socquettes invisibles - Ton chair moyen', 
             price: '5,45 €', 
@@ -49,19 +49,23 @@ const initialState = {
             liked: true
         }
     ],
-    filterText: 'all'
+    filterText: 'all',
+    filterValue: ''
 }
 
 export default function articlesReducer(state = initialState, action){
     switch(action.type){
         case 'TOGGLE_ARTICLE_LIKE':
-            state.articles = [...state.articles];
-            state.articles[action.id] = { ...state.articles[action.id]};
-            state.articles[action.id].liked = !state.articles[action.id].liked;
+            state.list = [...state.list];
+            state.list[action.id] = { ...state.list[action.id]};
+            state.list[action.id].liked = !state.list[action.id].liked;
             return { ...state };
         case 'FILTER_ARTICLE':
             state.filterText = action.text;
             return { ...state };
+        case 'FILTER_ARTICLE_BY':
+            state.filterValue = action.value;
+            return { ...state };
         default: 
         return state
     }

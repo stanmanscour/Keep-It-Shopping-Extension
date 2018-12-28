@@ -18,11 +18,13 @@
         position: relative; 
         height: 100vh;
         background-color: white;
+        box-shadow: -1px 1px 1px #97979740;
         
         //border: 1px solid black;
     }
 
     @import 'header';
+    @import 'headerSearch'; 
     @import 'body';
     @import 'articlesList';
     @import 'articleItem';
