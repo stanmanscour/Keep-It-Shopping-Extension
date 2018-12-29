@@ -6,7 +6,8 @@ interface IArticle {
     source: string,
     price: string,
     liked: boolean,
-    id: number
+    id: number,
+    imageUrl: string
 }
 
 interface IProps {
@@ -33,7 +34,7 @@ class ArticleItem extends React.PureComponent<IProps, any> {
         return(
             <div className="KPTAPP-article-item">
                 <div className="KPTAPP-article-item__picture">
-                    <img src={this.props.article.name}></img>
+                    <img src={this.props.article.imageUrl}></img>
                 </div>
                 <div className="KPTAPP-article-item__body">
                     <p>{this.props.article.name}</p>

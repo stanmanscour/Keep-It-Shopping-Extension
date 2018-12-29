@@ -14,9 +14,19 @@
         min-width: 60px;
         height: 96px;
         background-color: lightGrey;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+
+        img {
+            max-height: 100%;
+        }
     }
 
     &__body {
+        width: 100%;
         margin-left: 14px;
         display: flex;
         flex-direction: column;
@@ -51,7 +61,11 @@
             
             span {
                 color: black;
-                font-size: 14px;
+                font-size: 12px;
+                height: 12px;
+                line-height: 12px;
+                margin-top: auto;
+                opacity: 0.4;
             }
         }
     }

@@ -4,11 +4,6 @@
    License: none (public domain)
 */
   /* HTML5 display-role reset for older browsers */
-  position: fixed;
-  top: 0px;
-  right: 0px;
-  width: 390px;
-  z-index: 99999999999999;
 }
 
 .KPTAPP html, .KPTAPP body, .KPTAPP div, .KPTAPP span, .KPTAPP applet, .KPTAPP object, .KPTAPP iframe, .KPTAPP h1, .KPTAPP h2, .KPTAPP h3, .KPTAPP h4, .KPTAPP h5, .KPTAPP h6, .KPTAPP p, .KPTAPP blockquote, .KPTAPP pre, .KPTAPP a, .KPTAPP abbr, .KPTAPP acronym, .KPTAPP address, .KPTAPP big, .KPTAPP cite, .KPTAPP code, .KPTAPP del, .KPTAPP dfn, .KPTAPP em, .KPTAPP img, .KPTAPP ins, .KPTAPP kbd, .KPTAPP q, .KPTAPP s, .KPTAPP samp, .KPTAPP small, .KPTAPP strike, .KPTAPP strong, .KPTAPP sub, .KPTAPP sup, .KPTAPP tt, .KPTAPP var, .KPTAPP b, .KPTAPP u, .KPTAPP i, .KPTAPP center, .KPTAPP dl, .KPTAPP dt, .KPTAPP dd, .KPTAPP ol, .KPTAPP ul, .KPTAPP li, .KPTAPP fieldset, .KPTAPP form, .KPTAPP label, .KPTAPP legend, .KPTAPP table, .KPTAPP caption, .KPTAPP tbody, .KPTAPP tfoot, .KPTAPP thead, .KPTAPP tr, .KPTAPP th, .KPTAPP td, .KPTAPP article, .KPTAPP aside, .KPTAPP canvas, .KPTAPP details, .KPTAPP embed, .KPTAPP figure, .KPTAPP figcaption, .KPTAPP footer, .KPTAPP header, .KPTAPP hgroup, .KPTAPP menu, .KPTAPP nav, .KPTAPP output, .KPTAPP ruby, .KPTAPP section, .KPTAPP summary, .KPTAPP time, .KPTAPP mark, .KPTAPP audio, .KPTAPP video {
@@ -57,11 +52,59 @@
 }
 
 .KPTAPP .KPTAPP-container {
-  position: relative;
+  position: fixed;
+  top: 0px;
+  right: -390px;
+  width: 390px;
+  z-index: 99999999999999;
   height: 100vh;
   background-color: white;
   -webkit-box-shadow: -1px 1px 1px #97979740;
           box-shadow: -1px 1px 1px #97979740;
+  -webkit-transition: right 600ms ease;
+  transition: right 600ms ease;
+}
+
+.KPTAPP .KPTAPP-container.active {
+  right: 0px;
+}
+
+.KPTAPP .KPTAPP-panel {
+  position: absolute;
+  left: -66px;
+  top: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.KPTAPP .KPTAPP-panel__item {
+  margin-top: 10px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #e9e9e9;
+  background-color: white;
+  -webkit-box-shadow: -1px 1px 1px #97979740;
+          box-shadow: -1px 1px 1px #97979740;
+  border-radius: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: colunm;
+          flex-direction: colunm;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  outline: none;
 }
 
 .KPTAPP .KPTAPP-header {
@@ -104,6 +147,23 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   color: white;
+  outline: none;
+}
+
+.KPTAPP .KPTAPP-headerSearch input::-webkit-input-placeholder {
+  color: #979797;
+}
+
+.KPTAPP .KPTAPP-headerSearch input:-ms-input-placeholder {
+  color: #979797;
+}
+
+.KPTAPP .KPTAPP-headerSearch input::-ms-input-placeholder {
+  color: #979797;
+}
+
+.KPTAPP .KPTAPP-headerSearch input::placeholder {
+  color: #979797;
 }
 
 .KPTAPP .KPTAPP-body {
@@ -152,9 +212,28 @@
   min-width: 60px;
   height: 96px;
   background-color: lightGrey;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+.KPTAPP .KPTAPP-article-item__picture img {
+  max-height: 100%;
 }
 
 .KPTAPP .KPTAPP-article-item__body {
+  width: 100%;
   margin-left: 14px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -201,7 +280,11 @@
 
 .KPTAPP .KPTAPP-article-item__body__action span {
   color: black;
-  font-size: 14px;
+  font-size: 12px;
+  height: 12px;
+  line-height: 12px;
+  margin-top: auto;
+  opacity: 0.4;
 }
 
 .KPTAPP .KPTAPP-article-item:hover .KPTAPP-article-item__close {
@@ -246,7 +329,8 @@
 }
 
 .KPTAPP .KPTAPP-navigation-articles button {
-  background-color: transparent;
+  background: transparent;
+  border-radius: 0px;
   border: none;
   color: white;
   font-weight: bold;

@@ -11,5 +11,10 @@
         width: 100%;
         box-sizing: border-box;
         color: white;
+        outline: none;
+
+        &::placeholder {
+            color: #979797;
+        }
     } 
 }
