@@ -61,8 +61,8 @@
   background-color: white;
   -webkit-box-shadow: -1px 1px 1px #97979740;
           box-shadow: -1px 1px 1px #97979740;
-  -webkit-transition: right 600ms ease;
-  transition: right 600ms ease;
+  -webkit-transition: right 400ms ease;
+  transition: right 400ms ease;
 }
 
 .KPTAPP .KPTAPP-container.active {
@@ -71,8 +71,8 @@
 
 .KPTAPP .KPTAPP-panel {
   position: absolute;
-  left: -66px;
-  top: 18px;
+  left: -54px;
+  top: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -83,14 +83,10 @@
 }
 
 .KPTAPP .KPTAPP-panel__item {
-  margin-top: 10px;
-  width: 50px;
-  height: 50px;
-  border: 1px solid #e9e9e9;
-  background-color: white;
-  -webkit-box-shadow: -1px 1px 1px #97979740;
-          box-shadow: -1px 1px 1px #97979740;
-  border-radius: 100%;
+  border: none;
+  width: 54px;
+  height: 54px;
+  background-color: #D01345;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -105,6 +101,7 @@
       -ms-flex-align: center;
           align-items: center;
   outline: none;
+  color: white;
 }
 
 .KPTAPP .KPTAPP-header {
@@ -190,7 +187,7 @@
   margin-top: 54px;
 }
 
-.KPTAPP .KPTAPP-article-item {
+.KPTAPP .KPTAPP-articles-list .KPTAPP-article-item {
   border-bottom: 1px solid #E9E7E7;
   height: 115px;
   min-height: 115px;
@@ -204,9 +201,15 @@
       -ms-flex-direction: row;
           flex-direction: row;
   position: relative;
+  -webkit-transition: background-color 500ms ease;
+  transition: background-color 500ms ease;
 }
 
-.KPTAPP .KPTAPP-article-item__picture {
+.KPTAPP .KPTAPP-articles-list .KPTAPP-article-item:hover {
+  background-color: #f5f5f8;
+}
+
+.KPTAPP .KPTAPP-articles-list .KPTAPP-article-item__picture {
   margin-left: 5px;
   max-width: 60px;
   min-width: 60px;
@@ -228,11 +231,11 @@
   overflow: hidden;
 }
 
-.KPTAPP .KPTAPP-article-item__picture img {
+.KPTAPP .KPTAPP-articles-list .KPTAPP-article-item__picture img {
   max-height: 100%;
 }
 
-.KPTAPP .KPTAPP-article-item__body {
+.KPTAPP .KPTAPP-articles-list .KPTAPP-article-item__body {
   width: 100%;
   margin-left: 14px;
   display: -webkit-box;
@@ -244,14 +247,14 @@
           flex-direction: column;
 }
 
-.KPTAPP .KPTAPP-article-item__body p {
+.KPTAPP .KPTAPP-articles-list .KPTAPP-article-item__body__title {
   font-size: 14px;
   font-weight: bold;
   line-height: 17px;
   color: #333333;
 }
 
-.KPTAPP .KPTAPP-article-item__body__price {
+.KPTAPP .KPTAPP-articles-list .KPTAPP-article-item__body__price {
   color: #D01345;
   font-size: 13px;
   font-weight: bold;
@@ -259,12 +262,12 @@
   display: inline-block;
 }
 
-.KPTAPP .KPTAPP-article-item__body button {
+.KPTAPP .KPTAPP-articles-list .KPTAPP-article-item__body button {
   margin-top: auto;
   display: inline-block;
 }
 
-.KPTAPP .KPTAPP-article-item__body__action {
+.KPTAPP .KPTAPP-articles-list .KPTAPP-article-item__body__action {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -278,7 +281,7 @@
   margin-top: auto;
 }
 
-.KPTAPP .KPTAPP-article-item__body__action span {
+.KPTAPP .KPTAPP-articles-list .KPTAPP-article-item__body__action span {
   color: black;
   font-size: 12px;
   height: 12px;
@@ -287,18 +290,18 @@
   opacity: 0.4;
 }
 
-.KPTAPP .KPTAPP-article-item:hover .KPTAPP-article-item__close {
+.KPTAPP .KPTAPP-articles-list .KPTAPP-article-item:hover .KPTAPP-article-item__close {
   opacity: 1;
 }
 
-.KPTAPP .KPTAPP-article-item__close {
+.KPTAPP .KPTAPP-articles-list .KPTAPP-article-item__close {
   position: absolute;
   top: 9px;
   right: 9px;
   opacity: 0;
 }
 
-.KPTAPP .KPTAPP-article-item__like {
+.KPTAPP .KPTAPP-articles-list .KPTAPP-article-item__like {
   display: inline-block;
   width: 20px;
   height: 20px;
@@ -307,13 +310,58 @@
   border: 1px solid lightGrey;
 }
 
-.KPTAPP .KPTAPP-article-item__like--active {
+.KPTAPP .KPTAPP-articles-list .KPTAPP-article-item__like--active {
   display: inline-block;
   width: 20px;
   height: 20px;
   border: none;
   background-color: #D01345;
   border: none;
+}
+
+.KPTAPP .KPTAPP-articles-list.block {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.KPTAPP .KPTAPP-articles-list.block .KPTAPP-article-item {
+  width: 50%;
+  height: 260px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: -1px;
+  margin-left: -1px;
+  border: 1px solid #E9E7E7;
+}
+
+.KPTAPP .KPTAPP-articles-list.block .KPTAPP-article-item__picture {
+  width: 100%;
+  height: 122px;
+  min-height: 122px;
+  min-width: initial;
+  max-width: initial;
+  margin-left: 0px;
+}
+
+.KPTAPP .KPTAPP-articles-list.block .KPTAPP-article-item__picture img {
+  max-width: 100%;
+  max-height: initial;
+}
+
+.KPTAPP .KPTAPP-articles-list.block .KPTAPP-article-item__body {
+  margin-left: 0px;
+  margin-top: 10px;
+  height: 100%;
+}
+
+.KPTAPP .KPTAPP-articles-list.block .KPTAPP-article-item__body__action {
+  margin-top: auto;
 }
 
 .KPTAPP .KPTAPP-navigation-articles {

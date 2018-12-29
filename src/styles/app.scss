@@ -17,7 +17,7 @@
         height: 100vh;
         background-color: white;
         box-shadow: -1px 1px 1px #97979740;
-        transition: right 600ms ease;
+        transition: right 400ms ease;
 
         &.active {
             right: 0px;
@@ -31,6 +31,6 @@
     @import 'headerSearch'; 
     @import 'body';
     @import 'articlesList';
-    @import 'articleItem';
-    @import 'navigationArticles';
+    //@import 'articleItem';
+    @import 'navigationArticles'; 
 } 

@@ -6,6 +6,7 @@ interface IProps {
     articles: Array<any>,
     filter: string,
     filterValue: string,
+    presentation: string,
     dispatch: (any) => void,
     toggleArticleLike: (number) => void
 }
@@ -43,7 +44,7 @@ class ArticlesContainer extends React.Component<IProps> {
     render() {
         return(
             <div className="KPTAPP-body">
-                <div className="KPTAPP-articles-list">
+                <div className={`KPTAPP-articles-list ${this.props.presentation}`}>
                     {this.filteredArticles(this.props.filter).map((item, key) => {
                         return <ArticleItem toggleLike={this.toggleLike}  id={key} key={key} article={item} />
                     })}
@@ -54,6 +55,7 @@ class ArticlesContainer extends React.Component<IProps> {
 }
 
 const mapStateToProps = state => ({
+    presentation: state.articles.presentation,
     articles: state.articles.list,
     filter: state.articles.filterText,
     filterValue: state.articles.filterValue

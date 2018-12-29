@@ -37,7 +37,7 @@ class ArticleItem extends React.PureComponent<IProps, any> {
                     <img src={this.props.article.imageUrl}></img>
                 </div>
                 <div className="KPTAPP-article-item__body">
-                    <p>{this.props.article.name}</p>
+                    <a className="KPTAPP-article-item__body__title" href={"google.com"}>{this.props.article.name}</a>
                     <span className="KPTAPP-article-item__body__price">{this.props.article.price}</span>
                     <div className="KPTAPP-article-item__body__action">
                         { likeButton }

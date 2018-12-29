@@ -22,7 +22,7 @@ const initialState = {
             imageUrl: 'https://st.mngbcn.com/rcs/pics/static/T4/fotos/S20/41040888_91.jpg?ts=1541515601557&imwidth=480&imdensity=2'
         },
         {
-            name: 'VESTE DE COSTUME À BOUTONNAGE CROISÉ EN CHINTZ CONFORT DÉTAIL', 
+            name: 'VESTE DE COSTUME À BOUTONNAGE CROISÉ EN CHINTZ CON...', 
             price: '69,95 €', 
             source: 'zara', 
             liked: true,
@@ -43,14 +43,14 @@ const initialState = {
             imageUrl: "https://static.zara.net/photos///2018/I/0/2/p/9621/314/401/2/w/1920/9621314401_1_1_1.jpg?ts=1534441948538"
         },
         {
-            name: 'ASOS - Lot de 5 paires de chaussettes invisibles à petit motif gaufré', 
+            name: 'ASOS - Lot de 5 paires de chaussettes invisibles...', 
             price: '11,99 €', 
             source: 'Asos', 
             liked: false,
             imageUrl: "https://images.asos-media.com/products/asos-lot-de-5-paires-de-chaussettes-invisibles-a-petit-motif-gaufre/7466454-1-multi?$XXL$&wid=513&fit=constrain"
         },
         {
-            name: 'Sixth June - Bomber à doublure imitation peau de mouton - Carreaux rouges', 
+            name: 'Sixth June - Bomber à doublure imitation peau de...', 
             price: '109,90 €', 
             source: 'asos', 
             liked: true,
@@ -58,7 +58,8 @@ const initialState = {
         }
     ],
     filterText: 'all',
-    filterValue: ''
+    filterValue: '',
+    presentation: 'row'
 }
 
 export default function articlesReducer(state = initialState, action){
@@ -73,6 +74,9 @@ export default function articlesReducer(state = initialState, action){
             return { ...state };
         case 'FILTER_ARTICLE_BY':
             state.filterValue = action.value;
+            return { ...state };
+        case 'CHANGE_ARTICLE_PRESENTATION':
+            state.presentation = action.presentation;
             return { ...state };
         default: 
         return state

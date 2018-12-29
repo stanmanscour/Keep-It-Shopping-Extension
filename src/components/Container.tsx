@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import ArticlesContainer from './ArticlesContainer'
-import Header from './Header'
+import Header from './header/Header'
 import Panel from './Panel';
 
 class Container extends React.PureComponent<any, any> {
