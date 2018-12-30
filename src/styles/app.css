@@ -134,7 +134,7 @@
           flex-grow: 1;
 }
 
-.KPTAPP .KPTAPP-headerSearch input {
+.KPTAPP .KPTAPP-headerSearch .KPTAPP-headerSearch__search {
   height: 30px;
   border: none;
   background-color: transparent;
@@ -145,21 +145,26 @@
           box-sizing: border-box;
   color: white;
   outline: none;
+  opacity: 0;
 }
 
-.KPTAPP .KPTAPP-headerSearch input::-webkit-input-placeholder {
+.KPTAPP .KPTAPP-headerSearch .KPTAPP-headerSearch__search.active {
+  opacity: 1;
+}
+
+.KPTAPP .KPTAPP-headerSearch .KPTAPP-headerSearch__search::-webkit-input-placeholder {
   color: #979797;
 }
 
-.KPTAPP .KPTAPP-headerSearch input:-ms-input-placeholder {
+.KPTAPP .KPTAPP-headerSearch .KPTAPP-headerSearch__search:-ms-input-placeholder {
   color: #979797;
 }
 
-.KPTAPP .KPTAPP-headerSearch input::-ms-input-placeholder {
+.KPTAPP .KPTAPP-headerSearch .KPTAPP-headerSearch__search::-ms-input-placeholder {
   color: #979797;
 }
 
-.KPTAPP .KPTAPP-headerSearch input::placeholder {
+.KPTAPP .KPTAPP-headerSearch .KPTAPP-headerSearch__search::placeholder {
   color: #979797;
 }
 

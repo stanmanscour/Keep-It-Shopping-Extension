@@ -17,7 +17,9 @@ class Search extends React.PureComponent<any, any> {
 
     handleBlurSearch = () => {
         console.log('blur');
-        this.props.blurSearch();
+        if (this.state.search === ''){
+            this.props.blurSearch();
+        }
     }
 
     updateSearch (event) {
@@ -30,8 +32,10 @@ class Search extends React.PureComponent<any, any> {
     render(){
         return (
             <div className="KPTAPP-headerSearch">
-                <span>{this.props.searchActive ? 'active' : 'not-active'}</span>
+                <label htmlFor="search">{this.props.searchActive ? 'active' : 'not-active'}</label>
                 <input 
+                    id="search"
+                    className={`KPTAPP-headerSearch__search ${this.props.searchActive ? 'active': ''}`}
                     onFocus={this.handleFocusSearch}
                     onBlur={this.handleBlurSearch}
                     value={this.state.search} 
@@ -43,7 +47,7 @@ class Search extends React.PureComponent<any, any> {
 }
 
 const mapStateToProps = state => ({
-    searchActive: state.container.searchActive
+    searchActive: state.container.researchActive
 })
 
 const mapDispatchToProps = dispatch => ({
