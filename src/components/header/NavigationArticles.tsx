@@ -20,12 +20,12 @@ class NavigationArticles extends React.Component<any> {
                 <button 
                     className={this.props.filter === 'all' ? 'active' : ''} 
                     onClick={() => this.filterArticles('all')}>
-                    <IconLoveWhite />
+                    <IconEyeWhite />
                 </button>
                 <button 
                     className={this.props.filter === 'liked' ? 'active' : ''} 
                     onClick={() => this.filterArticles('liked')}>
-                        <IconEyeWhite />
+                        <IconLoveWhite />
                 </button>
             </div>
         )

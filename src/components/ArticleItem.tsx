@@ -1,5 +1,7 @@
 import * as React from 'react'
 import "../styles/app.css"
+import IconLoveBorderGrey from '../images/icons/love-border-grey'
+import IconLoveFullRed from '../images/icons/love-full-red'
 
 interface IArticle {
     name: string,
@@ -26,8 +28,11 @@ class ArticleItem extends React.PureComponent<IProps, any> {
     render() {
 
         let likeButton = <button 
-            onClick={ this.handleButton }
-            className={this.props.article.liked ? 'KPTAPP-article-item__like--active' : 'KPTAPP-article-item__like' }>
+                onClick={ this.handleButton }
+                className="KPTAPP-article-item__like">
+                {this.props.article.liked ? 
+                    <IconLoveFullRed /> 
+                : <IconLoveBorderGrey /> }
             </button>;
 
 

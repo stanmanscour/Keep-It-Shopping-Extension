@@ -362,21 +362,10 @@
 }
 
 .KPTAPP .KPTAPP-articles-list .KPTAPP-article-item__like {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
   border: none;
   background-color: transparent;
-  border: 1px solid lightGrey;
-}
-
-.KPTAPP .KPTAPP-articles-list .KPTAPP-article-item__like--active {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  border: none;
-  background-color: #D01345;
-  border: none;
+  padding: 0;
+  outline: none;
 }
 
 .KPTAPP .KPTAPP-articles-list.block {
@@ -471,5 +460,6 @@
   opacity: 1;
   background-color: black;
   outline: none;
+  cursor: pointer;
 }
 /*# sourceMappingURL=app.css.map */

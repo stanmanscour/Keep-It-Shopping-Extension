@@ -97,21 +97,10 @@
         }
     
         &__like {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
             border: none;
             background-color: transparent;
-            border: 1px solid lightGrey;
-    
-            &--active {
-                display: inline-block;
-                width: 20px;
-                height: 20px;
-                border: none;
-                background-color: $defaultRed;
-                border: none;
-            }
+            padding: 0;
+            outline: none;
         }
     }
 
