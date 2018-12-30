@@ -104,6 +104,11 @@
   color: white;
 }
 
+.KPTAPP .KPTAPP-panel__item:hover {
+  cursor: pointer;
+  background-color: #be113e;
+}
+
 .KPTAPP .KPTAPP-header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -150,10 +155,10 @@
   position: absolute;
   left: 0px;
   height: 16px;
-  -webkit-transition: -webkit-transform 500ms ease;
-  transition: -webkit-transform 500ms ease;
-  transition: transform 500ms ease;
-  transition: transform 500ms ease, -webkit-transform 500ms ease;
+  -webkit-transition: -webkit-transform 200ms ease;
+  transition: -webkit-transform 200ms ease;
+  transition: transform 200ms ease;
+  transition: transform 200ms ease, -webkit-transform 200ms ease;
 }
 
 .KPTAPP .KPTAPP-headerSearch .KPTAPP-headerSearch__search {
@@ -169,6 +174,10 @@
   opacity: 0;
   -webkit-box-shadow: none;
           box-shadow: none;
+}
+
+.KPTAPP .KPTAPP-headerSearch .KPTAPP-headerSearch__search:-webkit-autofill, .KPTAPP .KPTAPP-headerSearch .KPTAPP-headerSearch__search:-webkit-autofill:hover, .KPTAPP .KPTAPP-headerSearch .KPTAPP-headerSearch__search:-webkit-autofill:focus {
+  background-color: transparent;
 }
 
 .KPTAPP .KPTAPP-headerSearch .KPTAPP-headerSearch__search::-webkit-input-placeholder {
@@ -221,6 +230,11 @@
   height: 21px;
   background-color: transparent;
   border: none;
+}
+
+.KPTAPP .KPTAPP-presentationArticles button:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 .KPTAPP .KPTAPP-body {
@@ -310,8 +324,13 @@
 .KPTAPP .KPTAPP-articles-list .KPTAPP-article-item__body__title {
   font-size: 14px;
   font-weight: bold;
+  text-decoration: none;
   line-height: 17px;
   color: #333333;
+}
+
+.KPTAPP .KPTAPP-articles-list .KPTAPP-article-item__body__title:hover {
+  text-decoration: underline;
 }
 
 .KPTAPP .KPTAPP-articles-list .KPTAPP-article-item__body__price {
@@ -348,6 +367,7 @@
   line-height: 12px;
   margin-top: auto;
   opacity: 0.4;
+  text-transform: lowercase;
 }
 
 .KPTAPP .KPTAPP-articles-list .KPTAPP-article-item:hover .KPTAPP-article-item__close {
@@ -356,9 +376,28 @@
 
 .KPTAPP .KPTAPP-articles-list .KPTAPP-article-item__close {
   position: absolute;
-  top: 9px;
-  right: 9px;
   opacity: 0;
+  height: 30px;
+  width: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  top: 0px;
+  right: 0px;
+}
+
+.KPTAPP .KPTAPP-articles-list .KPTAPP-article-item__close:before {
+  content: '';
 }
 
 .KPTAPP .KPTAPP-articles-list .KPTAPP-article-item__like {
@@ -366,6 +405,11 @@
   background-color: transparent;
   padding: 0;
   outline: none;
+}
+
+.KPTAPP .KPTAPP-articles-list .KPTAPP-article-item__like:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 .KPTAPP .KPTAPP-articles-list.block {
