@@ -1,0 +1,16 @@
+&-presentationArticles {
+    width: 54px;
+    height: 54px;
+    min-width: 54px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    button {
+        outline: none;
+        height: 21px;
+        background-color: transparent;
+        border: none;
+    }
+}

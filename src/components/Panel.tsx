@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import IconShirtWhite from '../images/icons/shirt-white'
 
 class Panel extends React.PureComponent<any, any> {
 
@@ -12,7 +13,9 @@ class Panel extends React.PureComponent<any, any> {
             <div className="KPTAPP-panel">
                 <button 
                     onClick={this.handleToggleContainer} 
-                    className="KPTAPP-panel__item"> {this.props.toggleStatus? 'open': 'not-open'} 
+                    className="KPTAPP-panel__item"> 
+                    <IconShirtWhite />
+                    {this.props.toggleStatus? '': ''} 
                 </button>
             </div>
         )
