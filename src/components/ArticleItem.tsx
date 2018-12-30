@@ -2,6 +2,7 @@ import * as React from 'react'
 import "../styles/app.css"
 import IconLoveBorderGrey from '../images/icons/love-border-grey'
 import IconLoveFullRed from '../images/icons/love-full-red'
+// import IconCrossGrey from '../images/icons/cross-black'
 
 interface IArticle {
     name: string,
@@ -49,10 +50,13 @@ class ArticleItem extends React.PureComponent<IProps, any> {
                         <span>{ this.props.article.source}</span>
                     </div>
                 </div>
-               <a className="KPTAPP-article-item__close">x</a>
             </div>
         )
     }
 }
+
+// <a className="KPTAPP-article-item__close">
+//    <IconCrossGrey />
+// </a>
 
 export default ArticleItem;

@@ -11,7 +11,7 @@
         position: absolute;
         left: 0px;
         height: 16px;
-        transition: transform 500ms ease;
+        transition: transform 200ms ease;
     }
 
     .KPTAPP-headerSearch__search {
@@ -25,6 +25,12 @@
         outline: none;
         opacity: 0;
         box-shadow: none;
+
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover, 
+        &:-webkit-autofill:focus {
+            background-color: transparent;
+        }
 
         &::placeholder {
             color: #979797;

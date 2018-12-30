@@ -16,5 +16,9 @@
         align-items: center;
         outline: none;
         color: white;
+        &:hover {
+            cursor: pointer;
+            background-color: $defaultHoverRed;
+        }
     }
 }
