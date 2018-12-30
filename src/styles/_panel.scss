@@ -1,0 +1,20 @@
+&-panel {
+    position: absolute;
+    left: -54px;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+
+    &__item {
+        border: none;
+        width: 54px;
+        height: 54px;
+        background-color: $defaultRed;;
+        display: flex;
+        flex-direction: colunm;
+        justify-content: center;
+        align-items: center;
+        outline: none;
+        color: white;
+    }
+}

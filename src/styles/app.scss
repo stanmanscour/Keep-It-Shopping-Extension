@@ -5,28 +5,32 @@
     * {
         box-sizing: border-box;
     }
-    position: fixed;
-    top: 0px;
-    right: 0px;
-    width: 390px;
-    z-index: 99999999999999;
-    
 }
 
 .KPTAPP .KPTAPP {
     &-container {
-        position: relative; 
+        position: fixed;
+        top: 0px;
+        right: -390px;
+        width: 390px;
+        z-index: 99999999999999;
         height: 100vh;
         background-color: white;
         box-shadow: -1px 1px 1px #97979740;
+        transition: right 400ms ease;
+
+        &.active {
+            right: 0px;
+        }
         
         //border: 1px solid black;
     }
 
+    @import 'panel';
     @import 'header';
     @import 'headerSearch'; 
     @import 'body';
     @import 'articlesList';
-    @import 'articleItem';
-    @import 'navigationArticles';
+    //@import 'articleItem';
+    @import 'navigationArticles'; 
 } 

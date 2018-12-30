@@ -2,7 +2,7 @@
     
     flex-grow: 1;
 
-    input {
+    .KPTAPP-headerSearch__search {
         height: 30px;
         border: none;
         background-color: transparent;
@@ -11,5 +11,15 @@
         width: 100%;
         box-sizing: border-box;
         color: white;
+        outline: none;
+        opacity: 0;
+
+        &.active {
+            opacity: 1;
+        }
+
+        &::placeholder {
+            color: #979797;
+        }
     } 
 }
