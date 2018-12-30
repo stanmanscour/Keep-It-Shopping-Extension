@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
+import IconLoupe from '../../images/icons/loupe-grey'
 
 class Search extends React.PureComponent<any, any> {
 
@@ -31,16 +32,18 @@ class Search extends React.PureComponent<any, any> {
 
     render(){
         return (
-            <div className="KPTAPP-headerSearch">
-                <label htmlFor="search">{this.props.searchActive ? 'active' : 'not-active'}</label>
+            <div className={`KPTAPP-headerSearch ${this.props.searchActive ? 'active': ''}`}>
+                <label htmlFor="search">
+                    <IconLoupe />
+                </label>
                 <input 
                     id="search"
-                    className={`KPTAPP-headerSearch__search ${this.props.searchActive ? 'active': ''}`}
+                    className="KPTAPP-headerSearch__search"
                     onFocus={this.handleFocusSearch}
                     onBlur={this.handleBlurSearch}
                     value={this.state.search} 
                     onChange={this.updateSearch.bind(this)}
-                    placeholder="Rechercher par nom ou par marque" type="text"/>
+                    placeholder="ex: Ceinture, Asos..." type="text"/>
              </div>
         )
     }

@@ -1,25 +1,43 @@
 &-headerSearch {
-    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     flex-grow: 1;
+    position: relative;
+    margin-right: 10px;
+
+    label {
+        position: absolute;
+        left: 0px;
+        height: 16px;
+        transition: transform 500ms ease;
+    }
 
     .KPTAPP-headerSearch__search {
         height: 30px;
         border: none;
         background-color: transparent;
-        padding-left: 12px;
         font-size: 13px;
         width: 100%;
         box-sizing: border-box;
         color: white;
         outline: none;
         opacity: 0;
-
-        &.active {
-            opacity: 1;
-        }
+        box-shadow: none;
 
         &::placeholder {
             color: #979797;
         }
     } 
+
+    &.active {
+        label {
+            transform: translateX(210px);
+        }
+        .KPTAPP-headerSearch__search {
+            opacity: 1;
+            border-bottom: 1px solid #5d5d5d
+        }
+    }
 }
