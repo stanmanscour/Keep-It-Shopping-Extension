@@ -6,12 +6,17 @@ import { Provider } from 'react-redux'
 import reducers from '../reducers'
 import thunk from 'redux-thunk';
 import { loadArticles } from '../actions/actions'
+import db from '../API/firebase'
 
 const store = createStore(
     reducers,
     applyMiddleware(thunk)
 );
 store.dispatch(loadArticles() as any);
+
+db.connect();
+//db.writeUserData('perriot', {nom: 'escobar', prenom: 'pierre'})
+
 
 chrome.runtime.sendMessage({}, (response) => {
     var checkReady = setInterval(() => {

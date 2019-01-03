@@ -19,7 +19,7 @@ export default function articlesReducer(state = initialState, action){
             state.filterText = action.text;
             return { ...state };
         case 'FILTER_ARTICLE_BY':
-            state.filterValue = action.value;
+            state.filterValue = action.value; 
             return { ...state };
         case 'CHANGE_ARTICLE_PRESENTATION':
             state.presentation = action.presentation;
