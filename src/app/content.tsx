@@ -1,13 +1,17 @@
 import * as React from "react"
 import * as ReactDOM from "react-dom"
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import Container from '../components/Container';
 import { Provider } from 'react-redux'
-import reducers from '../reducers/index'
+import reducers from '../reducers'
+import thunk from 'redux-thunk';
+import { loadArticles } from '../actions/actions'
 
 const store = createStore(
-    reducers
+    reducers,
+    applyMiddleware(thunk)
 );
+store.dispatch(loadArticles() as any);
 
 chrome.runtime.sendMessage({}, (response) => {
     var checkReady = setInterval(() => {
