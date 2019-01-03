@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 import IconLoupe from '../../images/icons/loupe-grey'
+import * as ActionCreator from '../../actions/actions'
 
 class Search extends React.PureComponent<any, any> {
 
@@ -54,9 +55,9 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    focusSearch: () => dispatch({type: "FOCUS_SEARCH"}),
-    blurSearch: () => dispatch({type: 'BLUR_SEARCH'}),
-    filterArticle: value => dispatch({type: 'FILTER_ARTICLE_BY', value})
+    focusSearch: () => dispatch(ActionCreator.focusSearch()),
+    blurSearch: () => dispatch(ActionCreator.blurSearch()),
+    filterArticle: value => dispatch(ActionCreator.filterArticleBy(value))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search)

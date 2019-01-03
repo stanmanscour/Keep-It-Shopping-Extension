@@ -1,6 +1,7 @@
 import * as React from 'react'
 import ArticleItem from './ArticleItem'
 import { connect } from 'react-redux'
+import * as ActionCreator from '../actions/actions'
 
 interface IProps {
     articles: Array<any>,
@@ -62,7 +63,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    toggleArticleLike: id => dispatch({type: 'TOGGLE_ARTICLE_LIKE', id})
+    toggleArticleLike: id => dispatch(ActionCreator.toggleArticleLike(id))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArticlesContainer);

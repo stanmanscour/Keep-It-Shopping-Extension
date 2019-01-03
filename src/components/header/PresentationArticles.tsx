@@ -2,6 +2,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import IconRowWhite from '../../images/icons/row-white'
 import IconBlockWhite from '../../images/icons/block-white'
+import * as ActionCreator from '../../actions/actions';
 
 class PresentationArticles extends React.PureComponent<any, any> {
     
@@ -38,7 +39,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    toggleArticlePresentation: presentation => dispatch({type: 'CHANGE_ARTICLE_PRESENTATION', presentation})
+    toggleArticlePresentation: presentation => dispatch(ActionCreator.changeArticlePresentation(presentation))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(PresentationArticles);
