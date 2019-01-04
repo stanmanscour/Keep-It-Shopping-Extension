@@ -23,7 +23,7 @@ interface IProps {
 class ArticleItem extends React.PureComponent<IProps, any> {
 
     handleButton = () => {
-        this.props.toggleLike(this.props.id);
+        this.props.toggleLike(this.props.article);
     }
 
     render() {

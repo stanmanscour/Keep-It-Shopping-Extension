@@ -10,14 +10,20 @@
         border: none;
         width: 54px;
         height: 54px;
-        background-color: $defaultRed;;
+        background-color: $defaultRed;
         display: flex;
         flex-direction: colunm;
         justify-content: center;
         align-items: center;
         outline: none;
         color: white;
-        &:hover {
+        box-shadow: none;
+
+        &:visited {
+            background-color: $defaultRed;
+        }
+        &:hover,
+        &:focus {
             cursor: pointer;
             background-color: $defaultHoverRed;
         }

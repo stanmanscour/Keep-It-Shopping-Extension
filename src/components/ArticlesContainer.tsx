@@ -46,6 +46,7 @@ class ArticlesContainer extends React.Component<IProps> {
         return(
             <div className="KPTAPP-body">
                 <div className={`KPTAPP-articles-list ${this.props.presentation}`}>
+                    <p>{this.filteredArticles(this.props.filter).length === 0 ? 'chargement' : ''}</p>
                     {this.filteredArticles(this.props.filter).map((item, key) => {
                         return <ArticleItem toggleLike={this.toggleLike}  id={key} key={key} article={item} />
                     })}
@@ -63,7 +64,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    toggleArticleLike: id => dispatch(ActionCreator.toggleArticleLike(id))
+    toggleArticleLike: id => dispatch(ActionCreator.toggleLikeArticle(id))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArticlesContainer);
