@@ -51,14 +51,23 @@ class db {
        })
    }
 
+   static editItem(item){
+       const itemId = item.id;
+       delete item.id;
+       return new Promise((resolve, reject) => {
+        db.firebase.database().ref(`shoppingLists/${this.userListId}/${itemId}`).set({
+            ...item
+        })
+        resolve();
+       })
+   }
+
    static storeNewItem(object){
-        console.log(`shoppingLists/${db.userListId}/`);
         db.firebase.database().ref(`shoppingLists/${this.userListId}/`).push().set(object);
    }
 
     static writeUserData(string, object){
         db.firebase.database().ref('users/' + string).set(object);
-        console.log('écrit');
     }
 
     static fetchItems(){

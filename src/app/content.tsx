@@ -18,7 +18,6 @@ db.connect()
 window.setTimeout(() => {
     store.dispatch(loadArticles() as any);
 }, 4000)
-//db.writeUserData('perriot', {nom: 'escobar', prenom: 'pierre'})
 
 chrome.runtime.sendMessage({}, (response) => {
     var checkReady = setInterval(() => {

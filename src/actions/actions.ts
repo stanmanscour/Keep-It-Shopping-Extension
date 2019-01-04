@@ -24,8 +24,18 @@ export const toggleContainer = () => {
     return {type: "TOGGLE_CONTAINER"}
 }
 
-export const storeArticles = (articles) => {
+export const storeArticles = (articles: Array<{}>) => {
     return {type: "STORE_ARTICLES", articles}
+}
+
+export const toggleLikeArticle = item => {
+    return function(dispatch) {
+        item.liked = !item.liked;
+        return db.editItem(item)
+            .then(() => {
+                dispatch(loadArticles());
+            })
+    }
 }
 
 export const loadArticles = () => {

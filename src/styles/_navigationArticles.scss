@@ -6,6 +6,7 @@
     align-items: center;
   
     button {
+        box-shadow: none;
         margin-right: 5px;
         background: transparent;
         border-radius: 0px;
@@ -24,6 +25,7 @@
         align-items: center;
 
         &.active,
+        &:focus,
         &:hover {
             opacity: 1;
             background-color: black;

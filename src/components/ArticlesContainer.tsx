@@ -64,7 +64,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    toggleArticleLike: id => dispatch(ActionCreator.toggleArticleLike(id))
+    toggleArticleLike: id => dispatch(ActionCreator.toggleLikeArticle(id))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArticlesContainer);
