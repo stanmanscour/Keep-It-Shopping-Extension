@@ -12,26 +12,13 @@ const store = createStore(
     reducers,
     applyMiddleware(thunk)
 );
-store.dispatch(loadArticles() as any);
 
-const articleRandom = {
-    id: "399xD534534545",
-    articleSource: 'google.com',
-    name: 'Manteau pour toi', 
-    price: '99,99 €', 
-    source: 'Mango', 
-    liked: false,
-    imageUrl: 'https://st.mngbcn.com/rcs/pics/static/T4/fotos/S20/41040888_91.jpg?ts=1541515601557&imwidth=480&imdensity=2'
-  }
-
-db.connect();
+db.connect()
 
 window.setTimeout(() => {
-    
-    db.storeNewItem(articleRandom)
+    store.dispatch(loadArticles() as any);
 }, 4000)
 //db.writeUserData('perriot', {nom: 'escobar', prenom: 'pierre'})
-
 
 chrome.runtime.sendMessage({}, (response) => {
     var checkReady = setInterval(() => {
@@ -43,9 +30,6 @@ chrome.runtime.sendMessage({}, (response) => {
 })
 
 class App extends React.Component {
-
-    
-
     render() {
         return (
             <Provider store={store}>

@@ -1,4 +1,5 @@
 import * as firebase from "firebase";
+import { loadArticles } from '../actions/actions'
 
 class db {
     static firebase = null;
@@ -58,6 +59,15 @@ class db {
     static writeUserData(string, object){
         db.firebase.database().ref('users/' + string).set(object);
         console.log('écrit');
+    }
+
+    static fetchItems(){
+        const userList = db.firebase.database().ref(`shoppingLists/${this.userListId}/`);
+        return new Promise(((resolve, reject) => {
+            userList.on('value', snapshot => {
+                resolve(snapshot.val()); 
+            })
+        }))
     }
 }
 

@@ -1,4 +1,4 @@
-import ArticleAPI from '../API/mockContentApi'
+import db from '../API/firebase'
 
 export const changeArticlePresentation = (presentation) => {
     return {type: 'CHANGE_ARTICLE_PRESENTATION', presentation}
@@ -30,10 +30,16 @@ export const storeArticles = (articles) => {
 
 export const loadArticles = () => {
     return function(dispatch) {
-        return ArticleAPI.getAllCourses().then(courses => {
-            console.log(courses);
-            dispatch(storeArticles(courses));
-        }).catch(error => {
+        return db.fetchItems()
+            .then(articles => {
+                const arrayOfArticles = Object.keys(articles).map(key => {
+                    const newItem = articles[key];
+                    newItem.id = key;
+                    return newItem
+                });
+                dispatch(storeArticles(arrayOfArticles))
+            })
+        .catch(error => {
             console.log(error); 
         })
     }
