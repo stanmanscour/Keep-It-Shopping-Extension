@@ -63,7 +63,17 @@ class db {
    }
 
    static storeNewItem(object){
-        db.firebase.database().ref(`shoppingLists/${this.userListId}/`).push().set(object);
+       console.log('in firebase, with (object)')
+        let key = db.firebase.database().ref(`shoppingLists/${this.userListId}/`).push().key;
+        return new Promise((resolve, reject) => {
+            console.log('in promise')
+            db.firebase.database().ref(`shoppingLists/${this.userListId}/${key}`).set(object);
+            // db.firebase.database().ref(`shoppingLists/${this.userListId}`).on('child_added', snapshot => {
+            //     console.log('in promise');
+            //     resolve('reussi');
+            // })
+            resolve('hey');
+       })
    }
 
     static writeUserData(string, object){

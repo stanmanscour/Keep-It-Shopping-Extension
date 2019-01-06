@@ -6,6 +6,7 @@ module.exports = {
 
     entry: {
         content: './src/app/content.tsx',
+        domFinder: './src/app/domFinder.ts',
         background: './src/app/background.ts',
         popup: './src/ui/popup.tsx',
     },

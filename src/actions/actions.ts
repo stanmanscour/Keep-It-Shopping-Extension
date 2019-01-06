@@ -38,6 +38,19 @@ export const toggleLikeArticle = item => {
     }
 }
 
+export const storeNewArticle = newArticle => {
+    console.log('in storeNewArticle with (newArticle)')
+    return function(dispatch){
+        console.log('in dispatch with (newArticle)')
+        db.storeNewItem(newArticle)
+            .then((data) => {
+                console.log(data);
+                dispatch(loadArticles())
+                //console.log(data);
+            })
+    }
+}
+
 export const loadArticles = () => {
     return function(dispatch) {
         return db.fetchItems()
