@@ -28,7 +28,7 @@ class ArticlesContainer extends React.Component<IProps> {
                 return article
             } 
            // return article.name.toLowerCase().indexOf(this.props.filterValue.toLowerCase()) !== -1
-        })
+        }).reverse();
     }
 
     filteredArticles = (filter) => {

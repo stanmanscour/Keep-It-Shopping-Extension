@@ -1,5 +1,6 @@
-import * as firebase from "firebase";
-import { loadArticles } from '../actions/actions'
+import * as firebase from "firebase/app";
+import 'firebase/database'
+
 
 class db {
     static firebase = null;
@@ -33,7 +34,6 @@ class db {
     static connect () {
         db.firebase = firebase.initializeApp(this._config);
         this.storeUser(); 
-        console.log('connected');
     }
 
    static createNewList(username: string){
@@ -63,7 +63,11 @@ class db {
    }
 
    static storeNewItem(object){
-        db.firebase.database().ref(`shoppingLists/${this.userListId}/`).push().set(object);
+        let key = db.firebase.database().ref(`shoppingLists/${this.userListId}/`).push().key;
+        return new Promise((resolve, reject) => {
+            db.firebase.database().ref(`shoppingLists/${this.userListId}/${key}`).set(object);
+            resolve('hey');
+       })
    }
 
     static writeUserData(string, object){

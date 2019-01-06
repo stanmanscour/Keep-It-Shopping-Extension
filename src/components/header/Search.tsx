@@ -13,12 +13,10 @@ class Search extends React.PureComponent<any, any> {
     }
 
     handleFocusSearch = () => {
-        console.log('focus');
         this.props.focusSearch();
     }
 
     handleBlurSearch = () => {
-        console.log('blur');
         if (this.state.search === ''){
             this.props.blurSearch();
         }

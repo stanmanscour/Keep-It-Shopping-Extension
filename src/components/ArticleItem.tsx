@@ -5,11 +5,12 @@ import IconLoveFullRed from '../images/icons/love-full-red'
 // import IconCrossGrey from '../images/icons/cross-black'
 
 interface IArticle {
+    id: number,
     name: string,
-    source: string,
     price: string,
     liked: boolean,
-    id: number,
+    source: string,
+    shop: string,
     imageUrl: string
 }
 
@@ -36,18 +37,19 @@ class ArticleItem extends React.PureComponent<IProps, any> {
                 : <IconLoveBorderGrey /> }
             </button>;
 
+        const article = this.props.article;
 
         return(
             <div className="KPTAPP-article-item">
                 <div className="KPTAPP-article-item__picture">
-                    <img src={this.props.article.imageUrl}></img>
+                    <img src={article.imageUrl}></img>
                 </div>
                 <div className="KPTAPP-article-item__body">
-                    <a className="KPTAPP-article-item__body__title" href={"google.com"}>{this.props.article.name}</a>
-                    <span className="KPTAPP-article-item__body__price">{this.props.article.price}</span>
+                    <a className="KPTAPP-article-item__body__title" href={"google.com"}>{article.name}</a>
+                    <span className="KPTAPP-article-item__body__price">{article.price}</span>
                     <div className="KPTAPP-article-item__body__action">
                         { likeButton }
-                        <span>{ this.props.article.source}</span>
+                        <a href={article.source} className="KPTAPP-article-item__body__action__link">{ article.shop}</a>
                     </div>
                 </div>
             </div>
