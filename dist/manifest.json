@@ -39,15 +39,6 @@
           "js/content.js"
         ],
         "run_at": "document_end"
-      },
-      {
-        "matches": [
-          "https://*/*"
-        ],
-        "js": [
-          "js/domFinder.js"
-        ],
-        "run_at": "document_end"
       }
     ]
   }

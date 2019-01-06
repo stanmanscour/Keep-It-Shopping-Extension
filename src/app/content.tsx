@@ -28,7 +28,9 @@ window.setTimeout(() => {
 
 window.setTimeout(() => {
     let newArray = domFinder.findElement();
-    store.dispatch(storeNewArticle(newArray) as any);
+    if (typeof newArray === 'object'){
+        store.dispatch(storeNewArticle(newArray) as any);
+    }
 }, 6000)
 
 chrome.runtime.sendMessage({}, (response) => {

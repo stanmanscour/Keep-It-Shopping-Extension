@@ -376,7 +376,7 @@
   margin-top: auto;
 }
 
-.KPTAPP .KPTAPP-articles-list .KPTAPP-article-item__body__action span {
+.KPTAPP .KPTAPP-articles-list .KPTAPP-article-item__body__action__link {
   color: black;
   font-size: 12px;
   height: 12px;
@@ -384,6 +384,12 @@
   margin-top: auto;
   opacity: 0.4;
   text-transform: lowercase;
+  color: #333333;
+  text-decoration: none;
+}
+
+.KPTAPP .KPTAPP-articles-list .KPTAPP-article-item__body__action__link:hover {
+  text-decoration: underline;
 }
 
 .KPTAPP .KPTAPP-articles-list .KPTAPP-article-item:hover .KPTAPP-article-item__close {
